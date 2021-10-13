@@ -3,7 +3,7 @@
  * @Author: lierenzhu
  * @Date: 2021-10-12 15:02:22
  * @LastEditors: lierenzhu
- * @LastEditTime: 2021-10-12 17:29:46
+ * @LastEditTime: 2021-10-13 10:07:37
  * @FilePath: /Code/leetcode/34.在排序数组中查找元素的第一个和最后一个位置.cpp
  */
 /*
@@ -23,7 +23,7 @@ public:
             return vector<int>{-1, -1};
         }
         int lower = lower_bound(nums, target);
-        int upper = upper_bound(nums, target);
+        int upper = upper_bound(nums, target) - 1;
         if (lower == nums.size() || nums[lower] != target)
         {
             return vector<int>{-1, -1};
@@ -35,56 +35,94 @@ public:
     {
         int l = 0, r = nums.size();
         int mid;
+
         while (l < r)
         {
             mid = l + (r - l) / 2;
             if (nums[mid] == target)
             {
-                while (mid >= 0 && nums[mid] == target)
-                {
-                    mid--;
-                }
-                mid++;
-                break;
+                r = mid;
             }
             else if (nums[mid] < target)
             {
-                l = mid + 1;
+                l = mid + 1; //
             }
-            else
+            else if (nums[mid] > target)
             {
                 r = mid;
             }
         }
-        return mid;
+        return l;
+
+        // while (l < r)
+        // {
+        //     mid = l + (r - l) / 2;
+        //     if (nums[mid] == target)
+        //     {
+        //         while (mid >= 0 && nums[mid] == target)
+        //         {
+        //             mid--;
+        //         }
+        //         mid++;
+        //         break;
+        //     }
+        //     else if (nums[mid] < target)
+        //     {
+        //         l = mid + 1;
+        //     }
+        //     else
+        //     {
+        //         r = mid;
+        //     }
+        // }
+        // return mid;
     }
 
     int upper_bound(vector<int> &nums, int target)
     {
         int l = 0, r = nums.size();
         int mid;
+
         while (l < r)
         {
             mid = l + (r - l) / 2;
             if (nums[mid] == target)
             {
-                while (mid <= nums.size() - 1 && nums[mid] == target)
-                {
-                    mid++;
-                }
-                mid--;
-                break;
+                l = mid + 1;
             }
             else if (nums[mid] < target)
             {
                 l = mid + 1;
             }
-            else
+            else if (nums[mid] > target)
             {
                 r = mid;
             }
         }
-        return mid;
+        return l;
+
+        // while (l < r)
+        // {
+        //     mid = l + (r - l) / 2;
+        //     if (nums[mid] == target)
+        //     {
+        //         while (mid <= nums.size() - 1 && nums[mid] == target)
+        //         {
+        //             mid++;
+        //         }
+        //         mid--;
+        //         break;
+        //     }
+        //     else if (nums[mid] < target)
+        //     {
+        //         l = mid + 1;
+        //     }
+        //     else
+        //     {
+        //         r = mid;
+        //     }
+        // }
+        // return mid;
     }
 };
 // @lc code=end
