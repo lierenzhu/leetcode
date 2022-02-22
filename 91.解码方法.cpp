@@ -3,7 +3,7 @@
  * @Author: lierenzhu
  * @Date: 2022-02-20 23:34:46
  * @LastEditors: lierenzhu
- * @LastEditTime: 2022-02-21 00:05:58
+ * @LastEditTime: 2022-02-21 00:16:32
  * @FilePath: /leetcode/91.解码方法.cpp
  */
 /*
@@ -41,7 +41,7 @@ public:
             {
                 return 0;
             }
-            if((prev<2&&prev>0)||prev==2&&cur<=6)
+            if(prev==1||prev==2&&cur<=6)
             {
                 if(cur)
                 {
