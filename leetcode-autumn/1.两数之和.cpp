@@ -16,7 +16,7 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        map<int,int> hash;
+        map<int,int> hashMap;
         vector<int> result(2,-1);
         int len=nums.size();
         
