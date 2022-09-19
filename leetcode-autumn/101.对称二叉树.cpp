@@ -3,8 +3,8 @@
  * @Author: lierenzhu
  * @Date: 2022-09-19 11:27:33
  * @LastEditors: lierenzhu
- * @LastEditTime: 2022-09-19 11:44:49
- * @FilePath: /leetcode/leetcode-autumn/101.对称二叉树.cpp
+ * @LastEditTime: 2022-09-19 12:51:28
+ * @FilePath: \leetcode-autumn\101.对称二叉树.cpp
  */
 /*
  * @lc app=leetcode.cn id=101 lang=cpp
@@ -38,6 +38,23 @@ struct TreeNode {
 class Solution {
 public:
     bool isSymmetric(TreeNode* root) {
+        return isSymmetric(root->left,root->right);
+    }
+    bool isSymmetric(TreeNode* left,TreeNode* right){
+        if(!left&&!right)
+        {
+            return true;
+        }
+        if(!left||!right)
+        {
+            return false;
+        }
+        if(left->val!=right->val)
+        {
+            return false;
+        }
+
+        return isSymmetric(left->left,right->right)&&isSymmetric(left->right,right->left);
     }
 };
 // @lc code=end

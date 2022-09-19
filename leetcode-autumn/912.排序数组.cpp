@@ -3,8 +3,8 @@
  * @Author: lierenzhu
  * @Date: 2022-09-04 15:22:35
  * @LastEditors: lierenzhu
- * @LastEditTime: 2022-09-04 17:02:52
- * @FilePath: /leetcode/leetcode-autumn/912.排序数组.cpp
+ * @LastEditTime: 2022-09-19 12:41:47
+ * @FilePath: \leetcode-autumn\912.排序数组.cpp
  */
 /*
  * @lc app=leetcode.cn id=912 lang=cpp
