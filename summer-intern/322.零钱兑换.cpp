@@ -3,8 +3,8 @@
  * @Author: lierenzhu
  * @Date: 2022-02-25 15:23:11
  * @LastEditors: lierenzhu
- * @LastEditTime: 2022-02-27 21:50:25
- * @FilePath: /leetcode/322.零钱兑换.cpp
+ * @LastEditTime: 2022-09-19 10:10:45
+ * @FilePath: /leetcode/summer-intern/322.零钱兑换.cpp
  */
 /*
  * @lc app=leetcode.cn id=322 lang=cpp
